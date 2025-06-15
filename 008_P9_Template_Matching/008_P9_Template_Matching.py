@@ -8,7 +8,7 @@ template = cv2.imread('opencv-template-for-matching.jpg',0)
 w, h = template.shape[::-1]
 
 res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
-threshold = 0.85
+threshold = 0.7
 loc = np.where (res >= threshold)
 
 for pt in zip(*loc[::-1]):
